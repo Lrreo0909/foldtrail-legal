@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>折迹 Foldtrail · 支持</title>
+<style>
+  :root{--bg:#08080a;--fg:#f5f5f7;--muted:#9b9ba4;--line:#26262c;--accent:#8b5cf6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif}
+  .wrap{max-width:720px;margin:0 auto;padding:56px 24px 80px}
+  h1{font-size:30px;letter-spacing:-.02em;margin:0 0 6px}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:36px}
+  h2{font-size:18px;margin:34px 0 8px;padding-top:20px;border-top:1px solid var(--line)}
+  p,li{color:#d6d6dc}
+  ul{padding-left:20px} li{margin:6px 0}
+  .box{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0;background:#0e0e12}
+  .key{color:var(--accent);font-weight:600}
+  a{color:var(--accent);text-decoration:none}
+  code{background:#16161b;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:14px}
+  footer{margin-top:48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>折迹 Foldtrail 支持</h1>
+  <div class="sub">记录折叠次数 · 折叠健康分 · 桌面组件</div>
+
+  <div class="box">
+    <p><span class="key">需要人工帮忙？</span>发邮件到
+    <a href="mailto:lrreo721@163.com">lrreo721@163.com</a>，
+    附上机型、系统版本、问题截图，通常 1–2 个工作日内回复。</p>
+  </div>
+
+  <h2>1. 为什么数字不涨 / 后台不记？</h2>
+  <p>折迹有三条记录通路，各自适用不同场景：</p>
+  <ul>
+    <li><strong>前台自动</strong>：打开 App 时读取系统铰链状态自动计数。只在 App 处于前台时生效，且需要 iPhone Duo 与较新的系统版本。</li>
+    <li><strong>后台自动</strong>：需要在「快捷指令」App 里自己创建一条自动化（例如「当手机折叠时」→「记录一次开合」）。没有配置这条自动化，锁屏和熄屏时就不会自动记。</li>
+    <li><strong>手动补记</strong>：主页「补记一次展开 / 合上」，随时补。</li>
+  </ul>
+  <p>检查顺序：App 是否在前台 → 系统版本是否支持铰链接口 → 是否已创建快捷指令自动化。</p>
+
+  <h2>2. 会不会重复计数？</h2>
+  <p>不会。两条自动通路同时触发时，8 秒内只记一笔（幂等窗口）。手动连续点按同理，会提示「刚记过，8 秒内算同一笔」。</p>
+
+  <h2>3. 健康分怎么算的？</h2>
+  <p>由两部分合成 0–100 分：</p>
+  <ul>
+    <li><strong>寿命账户</strong>：累计展开次数相对参考寿命（20 万次）的消耗比例</li>
+    <li><strong>使用强度</strong>：今天与近 7 日的折叠量相对建议值（每天 50 次）的高低</li>
+  </ul>
+  <p>分数低不代表设备损坏，只表示这阵子折得比较密，或者累计次数已经不少。</p>
+
+  <h2>4. 「20 万次」是官方数据吗？</h2>
+  <p>不是。20 万次是折叠屏面板行业常见的标称量级（公开资料多为 20 万–30 万次），折迹取保守值作为展示用的参考分母，<strong>不代表任何厂商对本机型的官方寿命，也不构成保修承诺</strong>。</p>
+
+  <h2>5. 数据会丢吗？换手机怎么办？</h2>
+  <p>所有记录只存在本机，不上传、不云同步。因此：</p>
+  <ul>
+    <li>卸载 App 或删除 App 数据 → 记录会一起删除，无法恢复</li>
+    <li>换新手机 → 记录不会自动迁移（当前版本没有同步功能）</li>
+  </ul>
+  <p>如果你需要跨设备同步，欢迎发邮件说明需求，会记进需求池。</p>
+
+  <h2>6. 怎么清空记录？</h2>
+  <p>主页右上角「⋯」→「清空记录」→ 确认。清空后不可撤销。</p>
+
+  <h2>7. 组件 / 灵动岛不更新？</h2>
+  <ul>
+    <li>组件按系统刷新预算更新，通常几分钟内同步；打开一次 App 会立刻刷新</li>
+    <li>灵动岛需要「灵动岛显示今日次数」开关打开，并且有实时活动正在运行</li>
+    <li>低电量模式下系统会减少后台刷新</li>
+  </ul>
+
+  <h2>8. 系统与设备要求</h2>
+  <ul>
+    <li>iOS 17.0 及以上，iPhone 专用</li>
+    <li>前台铰链自动计数：需要 iPhone Duo 与支持铰链接口的系统版本；其它情况用「快捷指令 + 手动补记」，功能不受影响</li>
+  </ul>
+
+  <h2>9. 反馈与建议</h2>
+  <p>想要的主题、想加的统计维度、想吐槽的地方，都发到上面的邮箱。邮件里写清机型与系统版本，能大幅提高处理速度。</p>
+
+  <footer>折迹 Foldtrail · 隐私政策见 <a href="./privacy.html">privacy.html</a></footer>
+</div>
+</body>
+</html>
